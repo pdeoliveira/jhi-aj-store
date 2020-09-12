@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.accenture.ecommerce.store",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "monolith",
+    "baseName": "store",
+    "packageName": "com.accenture.ecommerce.store",
+    "packageFolder": "com/accenture/ecommerce/store",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MTc1M2ZjZTE1NWJiYjdmMmEzODUxZmM0Yzc0ZWY4MjMzMTJmZjE3YTIzZjQ0NDUzMDllZDAwNDk0ZWRjYTQzZDljMGU0MjMwMTZhZWIxYjQ3ZTExZThlYjYyMmZiZDRhZDU0MDAyZjcxNmNlNzA1YTNkZGI0YzA2MTBhMjk2ZDg=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "pulse",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1599871201029,
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "pt-br"],
+    "blueprints": []
+  }
+}
