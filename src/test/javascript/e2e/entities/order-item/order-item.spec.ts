@@ -16,7 +16,7 @@ describe('OrderItem e2e test', () => {
     await browser.get('/');
     navBarPage = new NavBarPage();
     signInPage = await navBarPage.getSignInPage();
-    await signInPage.autoSignInUsing('admin', 'admin');
+    await signInPage.autoSignInUsing('admin', 'Admin/1');
     await browser.wait(ec.visibilityOf(navBarPage.entityMenu), 5000);
   });
 

@@ -7,13 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
-        "product": "Product",
-        "productCategory": "Product Category",
-        "customer": "Customer",
-        "productOrder": "Product Order",
-        "orderItem": "Order Item",
-        "invoice": "Invoice",
-        "shipment": "Shipment",
+        "product": "Produto",
+        "productCategory": "Categoria do Produto",
+        "customer": "Cliente",
+        "productOrder": "Pedido de Produto",
+        "orderItem": "Item de Pedido",
+        "invoice": "Fatura",
+        "shipment": "Envio",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -57,7 +57,7 @@
         "authenticated": {
           "prefix": "Se deseja ",
           "link": "entrar",
-          "suffix": ", utilize as seguintes contas padrões:<br/>- Administrador (usuário=\"admin\" and senha=\"admin\") <br/>- Usuário (usuário=\"user\" e senha=\"user\")."
+          "suffix": ", utilize as seguintes contas padrões:<br/>- Administrador (usuário=\"admin\" and senha=\"Admin/1\") <br/>- Usuário (usuário=\"user\" e senha=\"User/1\")."
         },
         "register": {
           "noaccount": "Não possui uma conta ainda?",

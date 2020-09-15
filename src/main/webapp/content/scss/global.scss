@@ -24,6 +24,14 @@ a:hover {
   color: $dropdown-link-hover-color;
 }
 
+.list-group-item {
+  background-color: #fff;
+}
+
+.list-group-item:hover {
+  background-color: #fff;
+}
+
 /* ==========================================================================
 Browser Upgrade Prompt
 ========================================================================== */
