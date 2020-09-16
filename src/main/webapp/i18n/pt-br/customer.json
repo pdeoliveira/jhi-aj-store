@@ -1,6 +1,6 @@
 {
   "storeApp": {
-    "Cliente": {
+    "customer": {
       "home": {
         "title": "Clientes",
         "createLabel": "Criar novo Cliente",

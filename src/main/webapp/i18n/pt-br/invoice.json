@@ -1,6 +1,6 @@
 {
   "storeApp": {
-    "Fatura": {
+    "invoice": {
       "home": {
         "title": "Faturas",
         "createLabel": "Criar novo Fatura",
