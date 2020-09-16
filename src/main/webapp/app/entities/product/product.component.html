@@ -126,8 +126,9 @@
                                     <h5 class="mb-1">{{ product.name }}</h5>
                                 </a>
                                 <small *ngIf="product.productCategory"> 
-                                    <a [routerLink]="['/product-category',
-                                        product.productCategory?.id, 'view']"><span jhiTranslate="storeApp.product.productCategory">Category</span>: {{ product.productCategory?.id }}
+                                    <a [routerLink]="['/product-category', product.productCategory?.id, 'view']">
+                                        <span jhiTranslate="storeApp.product.productCategory">Category</span>: 
+                                            {{ product.productCategory?.name }}
                                     </a>
                                 </small>
                             </div>

@@ -57,7 +57,7 @@
         "authenticated": {
           "prefix": "If you want to ",
           "link": "sign in",
-          "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"Admin/1\") <br/>- User (login=\"user\" and password=\"User/1\")."
+          "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
         },
         "register": {
           "noaccount": "You don't have an account yet?",

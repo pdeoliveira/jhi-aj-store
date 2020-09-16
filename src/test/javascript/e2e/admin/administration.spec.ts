@@ -8,7 +8,7 @@ describe('administration', () => {
   let navBarPage: NavBarPage;
   let signInPage: SignInPage;
   const username = process.env.E2E_USERNAME || 'admin';
-  const password = process.env.E2E_PASSWORD || 'Admin/1';
+  const password = process.env.E2E_PASSWORD || 'admin';
 
   before(async () => {
     await browser.get('/');
