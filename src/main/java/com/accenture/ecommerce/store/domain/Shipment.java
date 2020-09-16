@@ -34,7 +34,8 @@ public class Shipment implements Serializable {
     @Column(name = "details")
     private String details;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties(value = "shipments", allowSetters = true)
     private Invoice invoice;
 

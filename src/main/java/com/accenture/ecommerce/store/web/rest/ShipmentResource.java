@@ -3,6 +3,8 @@ package com.accenture.ecommerce.store.web.rest;
 import com.accenture.ecommerce.store.domain.Shipment;
 import com.accenture.ecommerce.store.service.ShipmentService;
 import com.accenture.ecommerce.store.web.rest.errors.BadRequestAlertException;
+import com.accenture.ecommerce.store.service.dto.ShipmentCriteria;
+import com.accenture.ecommerce.store.service.ShipmentQueryService;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
@@ -40,8 +42,11 @@ public class ShipmentResource {
 
     private final ShipmentService shipmentService;
 
-    public ShipmentResource(ShipmentService shipmentService) {
+    private final ShipmentQueryService shipmentQueryService;
+
+    public ShipmentResource(ShipmentService shipmentService, ShipmentQueryService shipmentQueryService) {
         this.shipmentService = shipmentService;
+        this.shipmentQueryService = shipmentQueryService;
     }
 
     /**
@@ -88,14 +93,27 @@ public class ShipmentResource {
      * {@code GET  /shipments} : get all the shipments.
      *
      * @param pageable the pagination information.
+     * @param criteria the criteria which the requested entities should match.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of shipments in body.
      */
     @GetMapping("/shipments")
-    public ResponseEntity<List<Shipment>> getAllShipments(Pageable pageable) {
-        log.debug("REST request to get a page of Shipments");
-        Page<Shipment> page = shipmentService.findAll(pageable);
+    public ResponseEntity<List<Shipment>> getAllShipments(ShipmentCriteria criteria, Pageable pageable) {
+        log.debug("REST request to get Shipments by criteria: {}", criteria);
+        Page<Shipment> page = shipmentQueryService.findByCriteria(criteria, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * {@code GET  /shipments/count} : count all the shipments.
+     *
+     * @param criteria the criteria which the requested entities should match.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     */
+    @GetMapping("/shipments/count")
+    public ResponseEntity<Long> countShipments(ShipmentCriteria criteria) {
+        log.debug("REST request to count Shipments by criteria: {}", criteria);
+        return ResponseEntity.ok().body(shipmentQueryService.countByCriteria(criteria));
     }
 
     /**

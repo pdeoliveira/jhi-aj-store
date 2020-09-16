@@ -22,8 +22,9 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "invoice",
       "otherEntityRelationshipName": "shipment",
+      "relationshipValidateRules": "required",
       "relationshipName": "invoice",
-      "otherEntityField": "id"
+      "otherEntityField": "code"
     }
   ],
   "changelogDate": "20200915111602",
@@ -31,7 +32,7 @@
   "dto": "no",
   "pagination": "pagination",
   "service": "serviceClass",
-  "jpaMetamodelFiltering": false,
+  "jpaMetamodelFiltering": true,
   "fluentMethods": true,
   "readOnly": false,
   "embedded": false,

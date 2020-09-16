@@ -49,7 +49,8 @@ public class ProductOrder implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Invoice> invoices = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @NotNull
     @JsonIgnoreProperties(value = "orders", allowSetters = true)
     private Customer customer;
 

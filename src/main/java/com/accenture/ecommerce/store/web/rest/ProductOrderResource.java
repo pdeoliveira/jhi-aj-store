@@ -3,6 +3,8 @@ package com.accenture.ecommerce.store.web.rest;
 import com.accenture.ecommerce.store.domain.ProductOrder;
 import com.accenture.ecommerce.store.service.ProductOrderService;
 import com.accenture.ecommerce.store.web.rest.errors.BadRequestAlertException;
+import com.accenture.ecommerce.store.service.dto.ProductOrderCriteria;
+import com.accenture.ecommerce.store.service.ProductOrderQueryService;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
@@ -40,8 +42,11 @@ public class ProductOrderResource {
 
     private final ProductOrderService productOrderService;
 
-    public ProductOrderResource(ProductOrderService productOrderService) {
+    private final ProductOrderQueryService productOrderQueryService;
+
+    public ProductOrderResource(ProductOrderService productOrderService, ProductOrderQueryService productOrderQueryService) {
         this.productOrderService = productOrderService;
+        this.productOrderQueryService = productOrderQueryService;
     }
 
     /**
@@ -88,14 +93,27 @@ public class ProductOrderResource {
      * {@code GET  /product-orders} : get all the productOrders.
      *
      * @param pageable the pagination information.
+     * @param criteria the criteria which the requested entities should match.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of productOrders in body.
      */
     @GetMapping("/product-orders")
-    public ResponseEntity<List<ProductOrder>> getAllProductOrders(Pageable pageable) {
-        log.debug("REST request to get a page of ProductOrders");
-        Page<ProductOrder> page = productOrderService.findAll(pageable);
+    public ResponseEntity<List<ProductOrder>> getAllProductOrders(ProductOrderCriteria criteria, Pageable pageable) {
+        log.debug("REST request to get ProductOrders by criteria: {}", criteria);
+        Page<ProductOrder> page = productOrderQueryService.findByCriteria(criteria, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * {@code GET  /product-orders/count} : count all the productOrders.
+     *
+     * @param criteria the criteria which the requested entities should match.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     */
+    @GetMapping("/product-orders/count")
+    public ResponseEntity<Long> countProductOrders(ProductOrderCriteria criteria) {
+        log.debug("REST request to count ProductOrders by criteria: {}", criteria);
+        return ResponseEntity.ok().body(productOrderQueryService.countByCriteria(criteria));
     }
 
     /**

@@ -33,15 +33,17 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "product",
       "otherEntityRelationshipName": "orderItem",
+      "relationshipValidateRules": "required",
       "relationshipName": "product",
-      "otherEntityField": "id"
+      "otherEntityField": "name"
     },
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "productOrder",
       "otherEntityRelationshipName": "orderItem",
+      "relationshipValidateRules": "required",
       "relationshipName": "order",
-      "otherEntityField": "id"
+      "otherEntityField": "code"
     }
   ],
   "changelogDate": "20200915111402",
@@ -49,7 +51,7 @@
   "dto": "no",
   "pagination": "pagination",
   "service": "serviceClass",
-  "jpaMetamodelFiltering": false,
+  "jpaMetamodelFiltering": true,
   "fluentMethods": true,
   "readOnly": false,
   "embedded": false,
