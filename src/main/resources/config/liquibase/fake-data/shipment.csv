@@ -1,11 +1,11 @@
-id;tracking_code;date;details
-1;Mouse withdrawal;2020-09-14T12:24:02;payment unleash Jamaican Dollar
-2;Rest;2020-09-15T07:40:32;Plains
-3;Quality Plastic plum;2020-09-14T12:00:54;Minnesota parsing
-4;Gorgeous Soft Hat Generic;2020-09-15T08:28:06;Architect SSL
-5;zero tolerance;2020-09-15T05:24:25;user-facing CSS
-6;ADP Ouguiya;2020-09-15T01:20:53;Garden
-7;auxiliary;2020-09-15T09:36:53;functionalities Bedfordshire withdrawal
-8;Data;2020-09-14T12:34:54;Viaduct hybrid
-9;mesh;2020-09-15T11:00:33;human-resource Shoes Wooden
-10;calculate value-added Metal;2020-09-15T08:59:27;Re-engineered withdrawal Ball
+id;tracking_code;date;details;invoice_id
+1;Mouse withdrawal;2020-09-14T12:24:02;payment unleash Jamaican Dollar;1
+2;Rest;2020-09-15T07:40:32;Plains;2
+3;Quality Plastic plum;2020-09-14T12:00:54;Minnesota parsing;3
+4;Gorgeous Soft Hat Generic;2020-09-15T08:28:06;Architect SSL;4
+5;zero tolerance;2020-09-15T05:24:25;user-facing CSS;5
+6;ADP Ouguiya;2020-09-15T01:20:53;Garden;6
+7;auxiliary;2020-09-15T09:36:53;functionalities Bedfordshire withdrawal;7
+8;Data;2020-09-14T12:34:54;Viaduct hybrid;8
+9;mesh;2020-09-15T11:00:33;human-resource Shoes Wooden;9
+10;calculate value-added Metal;2020-09-15T08:59:27;Re-engineered withdrawal Ball;10

@@ -43,6 +43,7 @@ enum OrderItemStatus {
 	AVAILABLE, OUT_OF_STOCK, BACK_ORDER
 }
 entity Invoice {
+    code String required
     date Instant required
     details String
     status InvoiceStatus required
@@ -63,11 +64,11 @@ entity Shipment {
 }
 // Customer (1) -----> (1) User
 relationship OneToOne {
-	Customer{user} to User
+	Customer{user(login) required} to User
 }
 // OrderItem (*) -----> (1) Product
 relationship ManyToOne {
-	OrderItem{product} to Product
+	OrderItem{product(name) required} to Product
 }
 // Customer (1) <-----> (*) ProductOrder
 // ProductOrder (1) <-----> (*) OrderItem
@@ -75,13 +76,14 @@ relationship ManyToOne {
 // Invoice (1) <-----> (*) Shipment
 // ProductCategory (1) <-----> (*) Product
 relationship OneToMany {
-    Customer{order} to ProductOrder{customer},
-    ProductOrder{orderItem} to OrderItem{order},
-    ProductOrder{invoice} to Invoice{order},
-    Invoice{shipment} to Shipment{invoice},
-    ProductCategory{product} to Product{productCategory}
+    Customer{order} to ProductOrder{customer(email) required},
+    ProductOrder{orderItem} to OrderItem{order(code) required},
+    ProductOrder{invoice} to Invoice{order(code) required},
+    Invoice{shipment} to Shipment{invoice(code) required},
+    ProductCategory{product} to Product{productCategory(name)}
 }
 // Service class for all entities
 service * with serviceClass
 // Wnable pagination for some of the entities that may get a lot of entries over time
 paginate Product, Customer, ProductOrder, Invoice, Shipment, OrderItem with pagination
+filter Customer, ProductOrder, Invoice, Shipment, OrderItem

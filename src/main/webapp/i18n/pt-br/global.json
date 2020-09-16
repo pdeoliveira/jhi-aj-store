@@ -14,6 +14,12 @@
         "orderItem": "Item de Pedido",
         "invoice": "Fatura",
         "shipment": "Envio",
+        "product": "Product",
+        "customer": "Customer",
+        "productOrder": "Product Order",
+        "orderItem": "Order Item",
+        "invoice": "Invoice",
+        "shipment": "Shipment",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

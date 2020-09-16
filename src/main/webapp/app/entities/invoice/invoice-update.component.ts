@@ -22,13 +22,14 @@ export class InvoiceUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
+    code: [null, [Validators.required]],
     date: [null, [Validators.required]],
     details: [],
     status: [null, [Validators.required]],
     paymentMethod: [null, [Validators.required]],
     paymentDate: [null, [Validators.required]],
     paymentAmount: [null, [Validators.required]],
-    order: [],
+    order: [null, Validators.required],
   });
 
   constructor(
@@ -55,6 +56,7 @@ export class InvoiceUpdateComponent implements OnInit {
   updateForm(invoice: IInvoice): void {
     this.editForm.patchValue({
       id: invoice.id,
+      code: invoice.code,
       date: invoice.date ? invoice.date.format(DATE_TIME_FORMAT) : null,
       details: invoice.details,
       status: invoice.status,
@@ -83,6 +85,7 @@ export class InvoiceUpdateComponent implements OnInit {
     return {
       ...new Invoice(),
       id: this.editForm.get(['id'])!.value,
+      code: this.editForm.get(['code'])!.value,
       date: this.editForm.get(['date'])!.value ? moment(this.editForm.get(['date'])!.value, DATE_TIME_FORMAT) : undefined,
       details: this.editForm.get(['details'])!.value,
       status: this.editForm.get(['status'])!.value,
