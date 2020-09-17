@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.criteria.JoinType;
 
+import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import com.accenture.ecommerce.store.security.SecurityUtils;
+import io.github.jhipster.service.filter.LongFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -32,9 +35,11 @@ public class ShipmentQueryService extends QueryService<Shipment> {
     private final Logger log = LoggerFactory.getLogger(ShipmentQueryService.class);
 
     private final ShipmentRepository shipmentRepository;
+    private final CustomerService customerService;
 
-    public ShipmentQueryService(ShipmentRepository shipmentRepository) {
+    public ShipmentQueryService(ShipmentRepository shipmentRepository, CustomerService customerService) {
         this.shipmentRepository = shipmentRepository;
+        this.customerService = customerService;
     }
 
     /**
@@ -58,7 +63,16 @@ public class ShipmentQueryService extends QueryService<Shipment> {
     @Transactional(readOnly = true)
     public Page<Shipment> findByCriteria(ShipmentCriteria criteria, Pageable page) {
         log.debug("find by criteria : {}, page: {}", criteria, page);
-        final Specification<Shipment> specification = createSpecification(criteria);
+        final Specification<Shipment> specification;
+        if (SecurityUtils.isCurrentUserInRole (AuthoritiesConstants.ADMIN)) {
+            specification = createSpecification(criteria);
+        }
+        else {
+            LongFilter longFilter = new LongFilter();
+            longFilter.setEquals(customerService.getCurrentCustomerLogin().get().getId());
+            criteria.setCustomerId(longFilter);
+            specification = createSpecification(criteria);
+        }
         return shipmentRepository.findAll(specification, page);
     }
 
@@ -97,6 +111,10 @@ public class ShipmentQueryService extends QueryService<Shipment> {
             if (criteria.getInvoiceId() != null) {
                 specification = specification.and(buildSpecification(criteria.getInvoiceId(),
                     root -> root.join(Shipment_.invoice, JoinType.LEFT).get(Invoice_.id)));
+            }
+            if (criteria.getCustomerId() != null) {
+                specification = specification.and(buildSpecification(criteria.getCustomerId(),
+                    root -> root.join(Shipment_.invoice, JoinType.LEFT).join(Invoice_.order, JoinType.LEFT).join(ProductOrder_.customer, JoinType.LEFT).get(Customer_.id)));
             }
         }
         return specification;

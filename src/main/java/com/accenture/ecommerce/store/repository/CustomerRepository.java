@@ -2,6 +2,8 @@ package com.accenture.ecommerce.store.repository;
 
 import com.accenture.ecommerce.store.domain.Customer;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -11,4 +13,5 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
+    Page<Customer> findAllByUserLogin(String s, Pageable pageable);
 }

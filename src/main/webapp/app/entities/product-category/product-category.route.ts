@@ -39,7 +39,7 @@ export const productCategoryRoute: Routes = [
     path: '',
     component: ProductCategoryComponent,
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'storeApp.productCategory.home.title',
     },
     canActivate: [UserRouteAccessService],
@@ -51,7 +51,7 @@ export const productCategoryRoute: Routes = [
       productCategory: ProductCategoryResolve,
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'storeApp.productCategory.home.title',
     },
     canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const productCategoryRoute: Routes = [
       productCategory: ProductCategoryResolve,
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'storeApp.productCategory.home.title',
     },
     canActivate: [UserRouteAccessService],
@@ -75,7 +75,7 @@ export const productCategoryRoute: Routes = [
       productCategory: ProductCategoryResolve,
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'storeApp.productCategory.home.title',
     },
     canActivate: [UserRouteAccessService],

@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.criteria.JoinType;
 
+import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import com.accenture.ecommerce.store.security.SecurityUtils;
+import io.github.jhipster.service.filter.LongFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -32,9 +35,11 @@ public class OrderItemQueryService extends QueryService<OrderItem> {
     private final Logger log = LoggerFactory.getLogger(OrderItemQueryService.class);
 
     private final OrderItemRepository orderItemRepository;
+    private final CustomerService customerService;
 
-    public OrderItemQueryService(OrderItemRepository orderItemRepository) {
+    public OrderItemQueryService(OrderItemRepository orderItemRepository, CustomerService customerService) {
         this.orderItemRepository = orderItemRepository;
+        this.customerService = customerService;
     }
 
     /**
@@ -58,7 +63,16 @@ public class OrderItemQueryService extends QueryService<OrderItem> {
     @Transactional(readOnly = true)
     public Page<OrderItem> findByCriteria(OrderItemCriteria criteria, Pageable page) {
         log.debug("find by criteria : {}, page: {}", criteria, page);
-        final Specification<OrderItem> specification = createSpecification(criteria);
+        final Specification<OrderItem> specification;
+        if (SecurityUtils.isCurrentUserInRole (AuthoritiesConstants.ADMIN)) {
+            specification = createSpecification(criteria);
+        }
+        else {
+            LongFilter longFilter = new LongFilter();
+            longFilter.setEquals(customerService.getCurrentCustomerLogin().get().getId());
+            criteria.setCustomerId(longFilter);
+            specification = createSpecification(criteria);
+        }
         return orderItemRepository.findAll(specification, page);
     }
 
@@ -101,6 +115,10 @@ public class OrderItemQueryService extends QueryService<OrderItem> {
             if (criteria.getOrderId() != null) {
                 specification = specification.and(buildSpecification(criteria.getOrderId(),
                     root -> root.join(OrderItem_.order, JoinType.LEFT).get(ProductOrder_.id)));
+            }
+            if (criteria.getCustomerId() != null) {
+                specification = specification.and(buildSpecification(criteria.getCustomerId(),
+                    root -> root.join(OrderItem_.order, JoinType.LEFT).join(ProductOrder_.customer, JoinType.LEFT).get(Customer_.id)));
             }
         }
         return specification;

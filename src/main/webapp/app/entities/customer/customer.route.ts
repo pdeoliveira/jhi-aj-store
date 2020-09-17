@@ -39,7 +39,7 @@ export const customerRoute: Routes = [
     path: '',
     component: CustomerComponent,
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       defaultSort: 'id,asc',
       pageTitle: 'storeApp.customer.home.title',
     },
@@ -52,7 +52,7 @@ export const customerRoute: Routes = [
       customer: CustomerResolve,
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'storeApp.customer.home.title',
     },
     canActivate: [UserRouteAccessService],
@@ -64,7 +64,7 @@ export const customerRoute: Routes = [
       customer: CustomerResolve,
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'storeApp.customer.home.title',
     },
     canActivate: [UserRouteAccessService],
@@ -76,7 +76,7 @@ export const customerRoute: Routes = [
       customer: CustomerResolve,
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.ADMIN],
       pageTitle: 'storeApp.customer.home.title',
     },
     canActivate: [UserRouteAccessService],

@@ -35,6 +35,8 @@ public class ShipmentCriteria implements Serializable, Criteria {
 
     private LongFilter invoiceId;
 
+    private LongFilter customerId;
+
     public ShipmentCriteria() {
     }
 
@@ -44,6 +46,7 @@ public class ShipmentCriteria implements Serializable, Criteria {
         this.date = other.date == null ? null : other.date.copy();
         this.details = other.details == null ? null : other.details.copy();
         this.invoiceId = other.invoiceId == null ? null : other.invoiceId.copy();
+        this.customerId = other.customerId == null ? null : other.customerId.copy();
     }
 
     @Override
@@ -91,6 +94,10 @@ public class ShipmentCriteria implements Serializable, Criteria {
         this.invoiceId = invoiceId;
     }
 
+    public LongFilter getCustomerId() { return customerId; }
+
+    public void setCustomerId(LongFilter customerId) { this.customerId = customerId; }
+
 
     @Override
     public boolean equals(Object o) {
@@ -106,7 +113,8 @@ public class ShipmentCriteria implements Serializable, Criteria {
             Objects.equals(trackingCode, that.trackingCode) &&
             Objects.equals(date, that.date) &&
             Objects.equals(details, that.details) &&
-            Objects.equals(invoiceId, that.invoiceId);
+            Objects.equals(invoiceId, that.invoiceId) &&
+            Objects.equals(customerId, that.customerId);
     }
 
     @Override
@@ -116,7 +124,8 @@ public class ShipmentCriteria implements Serializable, Criteria {
         trackingCode,
         date,
         details,
-        invoiceId
+        invoiceId,
+        customerId
         );
     }
 
@@ -129,6 +138,7 @@ public class ShipmentCriteria implements Serializable, Criteria {
                 (date != null ? "date=" + date + ", " : "") +
                 (details != null ? "details=" + details + ", " : "") +
                 (invoiceId != null ? "invoiceId=" + invoiceId + ", " : "") +
+                (customerId != null ? "customerId=" + customerId + ", " : "") +
             "}";
     }
 

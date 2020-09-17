@@ -84,6 +84,8 @@ public class InvoiceCriteria implements Serializable, Criteria {
 
     private LongFilter orderId;
 
+    private LongFilter customerId;
+
     public InvoiceCriteria() {
     }
 
@@ -98,6 +100,7 @@ public class InvoiceCriteria implements Serializable, Criteria {
         this.paymentAmount = other.paymentAmount == null ? null : other.paymentAmount.copy();
         this.shipmentId = other.shipmentId == null ? null : other.shipmentId.copy();
         this.orderId = other.orderId == null ? null : other.orderId.copy();
+        this.customerId = other.customerId == null ? null : other.customerId.copy();
     }
 
     @Override
@@ -185,6 +188,10 @@ public class InvoiceCriteria implements Serializable, Criteria {
         this.orderId = orderId;
     }
 
+    public LongFilter getCustomerId() { return customerId; }
+
+    public void setCustomerId(LongFilter customerId) { this.customerId = customerId; }
+
 
     @Override
     public boolean equals(Object o) {
@@ -205,7 +212,8 @@ public class InvoiceCriteria implements Serializable, Criteria {
             Objects.equals(paymentDate, that.paymentDate) &&
             Objects.equals(paymentAmount, that.paymentAmount) &&
             Objects.equals(shipmentId, that.shipmentId) &&
-            Objects.equals(orderId, that.orderId);
+            Objects.equals(orderId, that.orderId) &&
+            Objects.equals(customerId, that.customerId);
     }
 
     @Override
@@ -220,7 +228,8 @@ public class InvoiceCriteria implements Serializable, Criteria {
         paymentDate,
         paymentAmount,
         shipmentId,
-        orderId
+        orderId,
+        customerId
         );
     }
 
@@ -238,6 +247,7 @@ public class InvoiceCriteria implements Serializable, Criteria {
                 (paymentAmount != null ? "paymentAmount=" + paymentAmount + ", " : "") +
                 (shipmentId != null ? "shipmentId=" + shipmentId + ", " : "") +
                 (orderId != null ? "orderId=" + orderId + ", " : "") +
+                (customerId != null ? "customerId=" + customerId + ", " : "") +
             "}";
     }
 

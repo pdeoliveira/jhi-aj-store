@@ -2,6 +2,8 @@ package com.accenture.ecommerce.store.service;
 
 import com.accenture.ecommerce.store.domain.Invoice;
 import com.accenture.ecommerce.store.repository.InvoiceRepository;
+import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import com.accenture.ecommerce.store.security.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,7 +62,13 @@ public class InvoiceService {
     @Transactional(readOnly = true)
     public Optional<Invoice> findOne(Long id) {
         log.debug("Request to get Invoice : {}", id);
-        return invoiceRepository.findById(id);
+        if (SecurityUtils.isCurrentUserInRole (AuthoritiesConstants.ADMIN)) {
+            return invoiceRepository.findById(id);
+        }
+        else {
+            return invoiceRepository.findOneByIdAndOrderCustomerUserLogin(id,
+                SecurityUtils.getCurrentUserLogin().get());
+        }
     }
 
     /**

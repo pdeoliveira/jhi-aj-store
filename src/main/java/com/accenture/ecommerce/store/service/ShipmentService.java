@@ -2,6 +2,8 @@ package com.accenture.ecommerce.store.service;
 
 import com.accenture.ecommerce.store.domain.Shipment;
 import com.accenture.ecommerce.store.repository.ShipmentRepository;
+import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import com.accenture.ecommerce.store.security.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,7 +62,13 @@ public class ShipmentService {
     @Transactional(readOnly = true)
     public Optional<Shipment> findOne(Long id) {
         log.debug("Request to get Shipment : {}", id);
-        return shipmentRepository.findById(id);
+        if (SecurityUtils.isCurrentUserInRole (AuthoritiesConstants.ADMIN)) {
+            return shipmentRepository.findById(id);
+        }
+        else {
+            return shipmentRepository.findOneByIdAndInvoiceOrderCustomerUserLogin(id,
+                SecurityUtils.getCurrentUserLogin().get());
+        }
     }
 
     /**

@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.criteria.JoinType;
 
+import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import com.accenture.ecommerce.store.security.SecurityUtils;
+import io.github.jhipster.service.filter.LongFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -18,6 +21,7 @@ import com.accenture.ecommerce.store.domain.ProductOrder;
 import com.accenture.ecommerce.store.domain.*; // for static metamodels
 import com.accenture.ecommerce.store.repository.ProductOrderRepository;
 import com.accenture.ecommerce.store.service.dto.ProductOrderCriteria;
+import com.accenture.ecommerce.store.repository.CustomerRepository;
 
 /**
  * Service for executing complex queries for {@link ProductOrder} entities in the database.
@@ -32,9 +36,11 @@ public class ProductOrderQueryService extends QueryService<ProductOrder> {
     private final Logger log = LoggerFactory.getLogger(ProductOrderQueryService.class);
 
     private final ProductOrderRepository productOrderRepository;
+    private final CustomerService customerService;
 
-    public ProductOrderQueryService(ProductOrderRepository productOrderRepository) {
+    public ProductOrderQueryService(ProductOrderRepository productOrderRepository, CustomerService customerService) {
         this.productOrderRepository = productOrderRepository;
+        this.customerService = customerService;
     }
 
     /**
@@ -58,7 +64,16 @@ public class ProductOrderQueryService extends QueryService<ProductOrder> {
     @Transactional(readOnly = true)
     public Page<ProductOrder> findByCriteria(ProductOrderCriteria criteria, Pageable page) {
         log.debug("find by criteria : {}, page: {}", criteria, page);
-        final Specification<ProductOrder> specification = createSpecification(criteria);
+        final Specification<ProductOrder> specification;
+        if (SecurityUtils.isCurrentUserInRole (AuthoritiesConstants.ADMIN)) {
+            specification = createSpecification(criteria);
+        }
+        else {
+            LongFilter longFilter = new LongFilter();
+            longFilter.setEquals(customerService.getCurrentCustomerLogin().get().getId());
+            criteria.setCustomerId(longFilter);
+            specification = createSpecification(criteria);
+        }
         return productOrderRepository.findAll(specification, page);
     }
 

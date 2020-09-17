@@ -2,6 +2,9 @@ package com.accenture.ecommerce.store.service;
 
 import com.accenture.ecommerce.store.domain.Customer;
 import com.accenture.ecommerce.store.repository.CustomerRepository;
+import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import com.accenture.ecommerce.store.security.SecurityUtils;
+import io.github.jhipster.service.filter.LongFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,7 +50,11 @@ public class CustomerService {
     @Transactional(readOnly = true)
     public Page<Customer> findAll(Pageable pageable) {
         log.debug("Request to get all Customers");
-        return customerRepository.findAll(pageable);
+        if (SecurityUtils.isCurrentUserInRole (AuthoritiesConstants.ADMIN)) {
+            return customerRepository.findAll(pageable);
+        } else
+            return customerRepository.findAllByUserLogin(SecurityUtils.getCurrentUserLogin().get(),
+                pageable);
     }
 
 
@@ -61,6 +68,21 @@ public class CustomerService {
     public Optional<Customer> findOne(Long id) {
         log.debug("Request to get Customer : {}", id);
         return customerRepository.findById(id);
+    }
+
+    /**
+     * Get current customer login.
+     *
+     * @return the entity.
+     */
+    @Transactional(readOnly = true)
+    public Optional<Customer> getCurrentCustomerLogin() {
+        log.debug("Request to get current Customer login");
+        LongFilter longFilter = new LongFilter();
+        Page<Customer> customers = customerRepository.findAllByUserLogin(
+            SecurityUtils.getCurrentUserLogin().get(),
+            Pageable.unpaged());
+        return customerRepository.findById(customers.iterator().next().getId());
     }
 
     /**

@@ -56,6 +56,8 @@ public class OrderItemCriteria implements Serializable, Criteria {
 
     private LongFilter orderId;
 
+    private LongFilter customerId;
+
     public OrderItemCriteria() {
     }
 
@@ -66,6 +68,7 @@ public class OrderItemCriteria implements Serializable, Criteria {
         this.status = other.status == null ? null : other.status.copy();
         this.productId = other.productId == null ? null : other.productId.copy();
         this.orderId = other.orderId == null ? null : other.orderId.copy();
+        this.customerId = other.customerId == null ? null : other.customerId.copy();
     }
 
     @Override
@@ -121,6 +124,10 @@ public class OrderItemCriteria implements Serializable, Criteria {
         this.orderId = orderId;
     }
 
+    public LongFilter getCustomerId() { return customerId; }
+
+    public void setCustomerId(LongFilter customerId) { this.customerId = customerId; }
+
 
     @Override
     public boolean equals(Object o) {
@@ -137,7 +144,8 @@ public class OrderItemCriteria implements Serializable, Criteria {
             Objects.equals(totalPrice, that.totalPrice) &&
             Objects.equals(status, that.status) &&
             Objects.equals(productId, that.productId) &&
-            Objects.equals(orderId, that.orderId);
+            Objects.equals(orderId, that.orderId) &&
+            Objects.equals(customerId, that.customerId);
     }
 
     @Override
@@ -148,7 +156,8 @@ public class OrderItemCriteria implements Serializable, Criteria {
         totalPrice,
         status,
         productId,
-        orderId
+        orderId,
+        customerId
         );
     }
 
@@ -162,6 +171,7 @@ public class OrderItemCriteria implements Serializable, Criteria {
                 (status != null ? "status=" + status + ", " : "") +
                 (productId != null ? "productId=" + productId + ", " : "") +
                 (orderId != null ? "orderId=" + orderId + ", " : "") +
+                (customerId != null ? "customerId=" + customerId + ", " : "") +
             "}";
     }
 
