@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @SpringBootTest(classes = StoreApp.class)
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"}, password = "admin")
 public class ShipmentResourceIT {
 
     private static final String DEFAULT_TRACKING_CODE = "AAAAAAAAAA";
@@ -186,7 +186,7 @@ public class ShipmentResourceIT {
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].details").value(hasItem(DEFAULT_DETAILS)));
     }
-    
+
     @Test
     @Transactional
     public void getShipment() throws Exception {

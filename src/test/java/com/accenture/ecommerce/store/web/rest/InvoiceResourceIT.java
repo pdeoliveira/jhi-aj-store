@@ -36,7 +36,7 @@ import com.accenture.ecommerce.store.domain.enumeration.PaymentMethod;
  */
 @SpringBootTest(classes = StoreApp.class)
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"}, password = "admin")
 public class InvoiceResourceIT {
 
     private static final String DEFAULT_CODE = "AAAAAAAAAA";
@@ -314,7 +314,7 @@ public class InvoiceResourceIT {
             .andExpect(jsonPath("$.[*].paymentDate").value(hasItem(DEFAULT_PAYMENT_DATE.toString())))
             .andExpect(jsonPath("$.[*].paymentAmount").value(hasItem(DEFAULT_PAYMENT_AMOUNT.intValue())));
     }
-    
+
     @Test
     @Transactional
     public void getInvoice() throws Exception {

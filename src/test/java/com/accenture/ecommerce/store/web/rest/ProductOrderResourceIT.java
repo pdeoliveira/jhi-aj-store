@@ -35,7 +35,7 @@ import com.accenture.ecommerce.store.domain.enumeration.OrderStatus;
  */
 @SpringBootTest(classes = StoreApp.class)
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"}, password = "admin")
 public class ProductOrderResourceIT {
 
     private static final Instant DEFAULT_PLACED_DATE = Instant.ofEpochMilli(0L);
@@ -227,7 +227,7 @@ public class ProductOrderResourceIT {
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].code").value(hasItem(DEFAULT_CODE)));
     }
-    
+
     @Test
     @Transactional
     public void getProductOrder() throws Exception {

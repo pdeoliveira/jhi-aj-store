@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @SpringBootTest(classes = StoreApp.class)
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(username="admin", authorities={"ROLE_ADMIN"}, password = "admin")
 public class ProductCategoryResourceIT {
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
@@ -151,7 +151,7 @@ public class ProductCategoryResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)));
     }
-    
+
     @Test
     @Transactional
     public void getProductCategory() throws Exception {
