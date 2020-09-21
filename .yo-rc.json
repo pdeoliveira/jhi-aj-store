@@ -4,7 +4,7 @@
       "packageName": "com.accenture.ecommerce.store",
       "nativeLanguage": "en"
     },
-    "jhipsterVersion": "6.10.3",
+    "jhipsterVersion": "6.10.1",
     "applicationType": "monolith",
     "baseName": "store",
     "packageName": "com.accenture.ecommerce.store",
