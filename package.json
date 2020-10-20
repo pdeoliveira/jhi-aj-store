@@ -1,9 +1,9 @@
 {
   "name": "store",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for store",
+  "description": "JHipster code for store",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "Apache License 2.0",
   "cacheDirectories": [
     "node_modules"
   ],
