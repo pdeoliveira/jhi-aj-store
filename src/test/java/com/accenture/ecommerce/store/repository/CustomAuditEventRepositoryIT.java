@@ -1,10 +1,10 @@
-package com.accenture.ecommerce.store.repository;
+package org.jhipster.ecommerce.store.repository;
 
-import com.accenture.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.StoreApp;
 
-import com.accenture.ecommerce.store.config.Constants;
-import com.accenture.ecommerce.store.config.audit.AuditEventConverter;
-import com.accenture.ecommerce.store.domain.PersistentAuditEvent;
+import org.jhipster.ecommerce.store.config.Constants;
+import org.jhipster.ecommerce.store.config.audit.AuditEventConverter;
+import org.jhipster.ecommerce.store.domain.PersistentAuditEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static com.accenture.ecommerce.store.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
+import static org.jhipster.ecommerce.store.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
 
 /**
  * Integration tests for {@link CustomAuditEventRepository}.

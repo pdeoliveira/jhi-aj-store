@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store.security;
+package org.jhipster.ecommerce.store.security;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

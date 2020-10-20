@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store.config;
+package org.jhipster.ecommerce.store.config;
 
 import io.github.jhipster.config.JHipsterDefaults;
 import io.github.jhipster.config.JHipsterProperties;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 
 import java.util.concurrent.TimeUnit;
 
-import static com.accenture.ecommerce.store.config.StaticResourcesWebConfiguration.*;
+import static org.jhipster.ecommerce.store.config.StaticResourcesWebConfiguration.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 

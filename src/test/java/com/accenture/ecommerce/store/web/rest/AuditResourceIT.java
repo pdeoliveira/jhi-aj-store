@@ -1,9 +1,9 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.PersistentAuditEvent;
-import com.accenture.ecommerce.store.repository.PersistenceAuditEventRepository;
-import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.PersistentAuditEvent;
+import org.jhipster.ecommerce.store.repository.PersistenceAuditEventRepository;
+import org.jhipster.ecommerce.store.security.AuthoritiesConstants;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

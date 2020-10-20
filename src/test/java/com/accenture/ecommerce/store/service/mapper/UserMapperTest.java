@@ -1,7 +1,7 @@
-package com.accenture.ecommerce.store.service.mapper;
+package org.jhipster.ecommerce.store.service.mapper;
 
-import com.accenture.ecommerce.store.domain.User;
-import com.accenture.ecommerce.store.service.dto.UserDTO;
+import org.jhipster.ecommerce.store.domain.User;
+import org.jhipster.ecommerce.store.service.dto.UserDTO;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

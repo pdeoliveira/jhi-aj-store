@@ -1,6 +1,6 @@
-package com.accenture.ecommerce.store.config;
+package org.jhipster.ecommerce.store.config;
 
-import com.accenture.ecommerce.store.service.MailService;
+import org.jhipster.ecommerce.store.service.MailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

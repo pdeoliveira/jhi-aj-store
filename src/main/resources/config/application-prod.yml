@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     io.github.jhipster: INFO
-    com.accenture.ecommerce.store: INFO
+    org.jhipster.ecommerce.store: INFO
 
 management:
   metrics:

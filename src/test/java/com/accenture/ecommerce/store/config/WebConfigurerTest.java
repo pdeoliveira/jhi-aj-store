@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store.config;
+package org.jhipster.ecommerce.store.config;
 
 import io.github.jhipster.config.JHipsterConstants;
 import io.github.jhipster.config.JHipsterProperties;

@@ -1,9 +1,9 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.ProductCategory;
-import com.accenture.ecommerce.store.repository.ProductCategoryRepository;
-import com.accenture.ecommerce.store.service.ProductCategoryService;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.ProductCategory;
+import org.jhipster.ecommerce.store.repository.ProductCategoryRepository;
+import org.jhipster.ecommerce.store.service.ProductCategoryService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

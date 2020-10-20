@@ -1,13 +1,13 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.Authority;
-import com.accenture.ecommerce.store.domain.User;
-import com.accenture.ecommerce.store.repository.UserRepository;
-import com.accenture.ecommerce.store.security.AuthoritiesConstants;
-import com.accenture.ecommerce.store.service.dto.UserDTO;
-import com.accenture.ecommerce.store.service.mapper.UserMapper;
-import com.accenture.ecommerce.store.web.rest.vm.ManagedUserVM;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.Authority;
+import org.jhipster.ecommerce.store.domain.User;
+import org.jhipster.ecommerce.store.repository.UserRepository;
+import org.jhipster.ecommerce.store.security.AuthoritiesConstants;
+import org.jhipster.ecommerce.store.service.dto.UserDTO;
+import org.jhipster.ecommerce.store.service.mapper.UserMapper;
+import org.jhipster.ecommerce.store.web.rest.vm.ManagedUserVM;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

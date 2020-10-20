@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store.config;
+package org.jhipster.ecommerce.store.config;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

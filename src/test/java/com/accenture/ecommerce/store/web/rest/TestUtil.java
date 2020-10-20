@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;

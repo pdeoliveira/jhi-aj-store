@@ -1,9 +1,9 @@
-package com.accenture.ecommerce.store.service;
+package org.jhipster.ecommerce.store.service;
 
-import com.accenture.ecommerce.store.config.Constants;
+import org.jhipster.ecommerce.store.config.Constants;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.User;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

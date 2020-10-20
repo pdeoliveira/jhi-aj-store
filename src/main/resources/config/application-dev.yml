@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    com.accenture.ecommerce.store: DEBUG
+    org.jhipster.ecommerce.store: DEBUG
 
 spring:
   profiles:

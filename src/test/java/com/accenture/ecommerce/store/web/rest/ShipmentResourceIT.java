@@ -1,12 +1,12 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.Shipment;
-import com.accenture.ecommerce.store.domain.Invoice;
-import com.accenture.ecommerce.store.repository.ShipmentRepository;
-import com.accenture.ecommerce.store.service.ShipmentService;
-import com.accenture.ecommerce.store.service.dto.ShipmentCriteria;
-import com.accenture.ecommerce.store.service.ShipmentQueryService;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.Shipment;
+import org.jhipster.ecommerce.store.domain.Invoice;
+import org.jhipster.ecommerce.store.repository.ShipmentRepository;
+import org.jhipster.ecommerce.store.service.ShipmentService;
+import org.jhipster.ecommerce.store.service.dto.ShipmentCriteria;
+import org.jhipster.ecommerce.store.service.ShipmentQueryService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

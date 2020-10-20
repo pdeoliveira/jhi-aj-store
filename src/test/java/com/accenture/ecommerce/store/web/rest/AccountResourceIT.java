@@ -1,16 +1,16 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.config.Constants;
-import com.accenture.ecommerce.store.domain.User;
-import com.accenture.ecommerce.store.repository.AuthorityRepository;
-import com.accenture.ecommerce.store.repository.UserRepository;
-import com.accenture.ecommerce.store.security.AuthoritiesConstants;
-import com.accenture.ecommerce.store.service.UserService;
-import com.accenture.ecommerce.store.service.dto.PasswordChangeDTO;
-import com.accenture.ecommerce.store.service.dto.UserDTO;
-import com.accenture.ecommerce.store.web.rest.vm.KeyAndPasswordVM;
-import com.accenture.ecommerce.store.web.rest.vm.ManagedUserVM;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.config.Constants;
+import org.jhipster.ecommerce.store.domain.User;
+import org.jhipster.ecommerce.store.repository.AuthorityRepository;
+import org.jhipster.ecommerce.store.repository.UserRepository;
+import org.jhipster.ecommerce.store.security.AuthoritiesConstants;
+import org.jhipster.ecommerce.store.service.UserService;
+import org.jhipster.ecommerce.store.service.dto.PasswordChangeDTO;
+import org.jhipster.ecommerce.store.service.dto.UserDTO;
+import org.jhipster.ecommerce.store.web.rest.vm.KeyAndPasswordVM;
+import org.jhipster.ecommerce.store.web.rest.vm.ManagedUserVM;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ import java.time.Instant;
 import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static com.accenture.ecommerce.store.web.rest.AccountResourceIT.TEST_USER_LOGIN;
+import static org.jhipster.ecommerce.store.web.rest.AccountResourceIT.TEST_USER_LOGIN;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 

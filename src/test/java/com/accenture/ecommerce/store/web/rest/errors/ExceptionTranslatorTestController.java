@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store.web.rest.errors;
+package org.jhipster.ecommerce.store.web.rest.errors;
 
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.http.HttpStatus;

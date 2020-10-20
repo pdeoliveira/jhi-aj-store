@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store;
+package org.jhipster.ecommerce.store;
 
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
@@ -14,15 +14,15 @@ class ArchTest {
 
         JavaClasses importedClasses = new ClassFileImporter()
             .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
-            .importPackages("com.accenture.ecommerce.store");
+            .importPackages("org.jhipster.ecommerce.store");
 
         noClasses()
             .that()
-                .resideInAnyPackage("com.accenture.ecommerce.store.service..")
+                .resideInAnyPackage("org.jhipster.ecommerce.store.service..")
             .or()
-                .resideInAnyPackage("com.accenture.ecommerce.store.repository..")
+                .resideInAnyPackage("org.jhipster.ecommerce.store.repository..")
             .should().dependOnClassesThat()
-                .resideInAnyPackage("..com.accenture.ecommerce.store.web..")
+                .resideInAnyPackage("..org.jhipster.ecommerce.store.web..")
         .because("Services and repositories should not depend on web layer")
         .check(importedClasses);
     }

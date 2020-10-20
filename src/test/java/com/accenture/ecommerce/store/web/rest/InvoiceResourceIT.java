@@ -1,13 +1,13 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.Invoice;
-import com.accenture.ecommerce.store.domain.Shipment;
-import com.accenture.ecommerce.store.domain.ProductOrder;
-import com.accenture.ecommerce.store.repository.InvoiceRepository;
-import com.accenture.ecommerce.store.service.InvoiceService;
-import com.accenture.ecommerce.store.service.dto.InvoiceCriteria;
-import com.accenture.ecommerce.store.service.InvoiceQueryService;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.Invoice;
+import org.jhipster.ecommerce.store.domain.Shipment;
+import org.jhipster.ecommerce.store.domain.ProductOrder;
+import org.jhipster.ecommerce.store.repository.InvoiceRepository;
+import org.jhipster.ecommerce.store.service.InvoiceService;
+import org.jhipster.ecommerce.store.service.dto.InvoiceCriteria;
+import org.jhipster.ecommerce.store.service.InvoiceQueryService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,8 +29,8 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.accenture.ecommerce.store.domain.enumeration.InvoiceStatus;
-import com.accenture.ecommerce.store.domain.enumeration.PaymentMethod;
+import org.jhipster.ecommerce.store.domain.enumeration.InvoiceStatus;
+import org.jhipster.ecommerce.store.domain.enumeration.PaymentMethod;
 /**
  * Integration tests for the {@link InvoiceResource} REST controller.
  */

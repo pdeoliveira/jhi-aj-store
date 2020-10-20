@@ -1,6 +1,6 @@
-package com.accenture.ecommerce.store.security.jwt;
+package org.jhipster.ecommerce.store.security.jwt;
 
-import com.accenture.ecommerce.store.security.AuthoritiesConstants;
+import org.jhipster.ecommerce.store.security.AuthoritiesConstants;
 
 import java.security.Key;
 import java.util.*;

@@ -1,14 +1,14 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.ProductOrder;
-import com.accenture.ecommerce.store.domain.OrderItem;
-import com.accenture.ecommerce.store.domain.Invoice;
-import com.accenture.ecommerce.store.domain.Customer;
-import com.accenture.ecommerce.store.repository.ProductOrderRepository;
-import com.accenture.ecommerce.store.service.ProductOrderService;
-import com.accenture.ecommerce.store.service.dto.ProductOrderCriteria;
-import com.accenture.ecommerce.store.service.ProductOrderQueryService;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.ProductOrder;
+import org.jhipster.ecommerce.store.domain.OrderItem;
+import org.jhipster.ecommerce.store.domain.Invoice;
+import org.jhipster.ecommerce.store.domain.Customer;
+import org.jhipster.ecommerce.store.repository.ProductOrderRepository;
+import org.jhipster.ecommerce.store.service.ProductOrderService;
+import org.jhipster.ecommerce.store.service.dto.ProductOrderCriteria;
+import org.jhipster.ecommerce.store.service.ProductOrderQueryService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.accenture.ecommerce.store.domain.enumeration.OrderStatus;
+import org.jhipster.ecommerce.store.domain.enumeration.OrderStatus;
 /**
  * Integration tests for the {@link ProductOrderResource} REST controller.
  */

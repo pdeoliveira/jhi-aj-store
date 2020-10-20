@@ -1,8 +1,8 @@
-package com.accenture.ecommerce.store.config.timezone;
+package org.jhipster.ecommerce.store.config.timezone;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.repository.timezone.DateTimeWrapper;
-import com.accenture.ecommerce.store.repository.timezone.DateTimeWrapperRepository;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.repository.timezone.DateTimeWrapper;
+import org.jhipster.ecommerce.store.repository.timezone.DateTimeWrapperRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

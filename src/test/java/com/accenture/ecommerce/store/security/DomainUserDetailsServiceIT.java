@@ -1,8 +1,8 @@
-package com.accenture.ecommerce.store.security;
+package org.jhipster.ecommerce.store.security;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.User;
-import com.accenture.ecommerce.store.repository.UserRepository;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.User;
+import org.jhipster.ecommerce.store.repository.UserRepository;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;

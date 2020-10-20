@@ -1,4 +1,4 @@
-package com.accenture.ecommerce.store.repository.timezone;
+package org.jhipster.ecommerce.store.repository.timezone;
 
 import javax.persistence.*;
 import java.io.Serializable;

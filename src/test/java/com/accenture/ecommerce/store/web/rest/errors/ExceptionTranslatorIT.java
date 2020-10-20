@@ -1,6 +1,6 @@
-package com.accenture.ecommerce.store.web.rest.errors;
+package org.jhipster.ecommerce.store.web.rest.errors;
 
-import com.accenture.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.StoreApp;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

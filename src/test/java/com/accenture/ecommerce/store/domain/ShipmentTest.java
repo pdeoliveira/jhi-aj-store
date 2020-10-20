@@ -1,8 +1,8 @@
-package com.accenture.ecommerce.store.domain;
+package org.jhipster.ecommerce.store.domain;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import com.accenture.ecommerce.store.web.rest.TestUtil;
+import org.jhipster.ecommerce.store.web.rest.TestUtil;
 
 public class ShipmentTest {
 

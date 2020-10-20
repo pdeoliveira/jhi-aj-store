@@ -1,13 +1,13 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.OrderItem;
-import com.accenture.ecommerce.store.domain.Product;
-import com.accenture.ecommerce.store.domain.ProductOrder;
-import com.accenture.ecommerce.store.repository.OrderItemRepository;
-import com.accenture.ecommerce.store.service.OrderItemService;
-import com.accenture.ecommerce.store.service.dto.OrderItemCriteria;
-import com.accenture.ecommerce.store.service.OrderItemQueryService;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.OrderItem;
+import org.jhipster.ecommerce.store.domain.Product;
+import org.jhipster.ecommerce.store.domain.ProductOrder;
+import org.jhipster.ecommerce.store.repository.OrderItemRepository;
+import org.jhipster.ecommerce.store.service.OrderItemService;
+import org.jhipster.ecommerce.store.service.dto.OrderItemCriteria;
+import org.jhipster.ecommerce.store.service.OrderItemQueryService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.accenture.ecommerce.store.domain.enumeration.OrderItemStatus;
+import org.jhipster.ecommerce.store.domain.enumeration.OrderItemStatus;
 /**
  * Integration tests for the {@link OrderItemResource} REST controller.
  */

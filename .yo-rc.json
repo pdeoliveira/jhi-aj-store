@@ -1,13 +1,13 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.accenture.ecommerce.store",
+      "packageName": "org.jhipster.ecommerce.store",
       "nativeLanguage": "en"
     },
     "jhipsterVersion": "6.10.1",
     "applicationType": "monolith",
     "baseName": "store",
-    "packageName": "com.accenture.ecommerce.store",
+    "packageName": "org.jhipster.ecommerce.store",
     "packageFolder": "com/accenture/ecommerce/store",
     "serverPort": "8080",
     "authenticationType": "jwt",

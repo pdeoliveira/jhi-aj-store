@@ -1,13 +1,13 @@
-package com.accenture.ecommerce.store.web.rest;
+package org.jhipster.ecommerce.store.web.rest;
 
-import com.accenture.ecommerce.store.StoreApp;
-import com.accenture.ecommerce.store.domain.Customer;
-import com.accenture.ecommerce.store.domain.User;
-import com.accenture.ecommerce.store.domain.ProductOrder;
-import com.accenture.ecommerce.store.repository.CustomerRepository;
-import com.accenture.ecommerce.store.service.CustomerService;
-import com.accenture.ecommerce.store.service.dto.CustomerCriteria;
-import com.accenture.ecommerce.store.service.CustomerQueryService;
+import org.jhipster.ecommerce.store.StoreApp;
+import org.jhipster.ecommerce.store.domain.Customer;
+import org.jhipster.ecommerce.store.domain.User;
+import org.jhipster.ecommerce.store.domain.ProductOrder;
+import org.jhipster.ecommerce.store.repository.CustomerRepository;
+import org.jhipster.ecommerce.store.service.CustomerService;
+import org.jhipster.ecommerce.store.service.dto.CustomerCriteria;
+import org.jhipster.ecommerce.store.service.CustomerQueryService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +26,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.accenture.ecommerce.store.domain.enumeration.Gender;
+import org.jhipster.ecommerce.store.domain.enumeration.Gender;
 /**
  * Integration tests for the {@link CustomerResource} REST controller.
  */
